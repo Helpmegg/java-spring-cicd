@@ -11,6 +11,8 @@ pipeline {
 
         stage('2. Build & Test') {
             steps {
+                // Надаємо права для викоання Maven
+                sh 'chmod +x mvnw'
                 // Запускаємо Maven для збірки та тестування
                 // Використовуємо ./mvnw (Maven Wrapper)
                 sh './mvnw clean package'
